@@ -1,0 +1,17 @@
+{
+  "name": "whattype",
+  "version": "1.0.0",
+  "description": "Zero-dependency easy-to-use JavaScript type helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "type",
+    "typescript",
+    "utility"
+  ],
+  "author": "Alexander Prisyazhnyy",
+  "license": "ISC"
+}
