@@ -78,3 +78,30 @@ function typeofKeyedCollection(value) {
 
   return null;
 }
+
+/**
+ * Returns a reference type
+ * @param {function | object} value Data of reference type
+ * @returns "object" | "function" | "array" | "regexp"
+ */
+function typeOfReference(value) {
+  const keyedCollectionType = typeofKeyedCollection(value);
+
+  if (keyedCollectionType) {
+    return keyedCollectionType;
+  }
+
+  if (value instanceof RegExp) {
+    return 'regexp';
+  }
+
+  if (isNull(value)) {
+    return null;
+  }
+
+  if (Array.isArray(value)) {
+    return 'array';
+  }
+
+  return typeof value;
+}
