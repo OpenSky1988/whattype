@@ -1,10 +1,10 @@
 {
   "name": "whattype",
   "version": "1.0.0",
-  "description": "Zero-dependency easy-to-use JavaScript type helper",
+  "description": "Zero-dependency easy-to-use JavaScript data type helper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "javascript",
