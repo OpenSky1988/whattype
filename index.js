@@ -40,3 +40,12 @@ function isPrimitiveType(value) {
 
   return typeof value;
 }
+
+/**
+ * Defines whether a value is of a reference data type.
+ * @param {any} value Data of any type
+ * @returns boolean
+ */
+ function isReferenceType(value) {
+  return !isPrimitiveType(value);
+}
