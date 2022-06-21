@@ -40,3 +40,68 @@ function isPrimitiveType(value) {
 
   return typeof value;
 }
+
+/**
+ * Defines whether a value is of a reference data type.
+ * @param {any} value Data of any type
+ * @returns boolean
+ */
+ function isReferenceType(value) {
+  return !isPrimitiveType(value);
+}
+
+/**
+ * Returns a keyed collection type. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections
+ * @param {object} value Data of object type
+ * @returns "set" | "map" | "weakset" | "weakmap"
+ */
+function typeofKeyedCollection(value) {
+  if (isNull(value)) {
+    return null;
+  }
+
+  if (value instanceof Set) {
+    return 'set';
+  }
+
+  if (value instanceof Map) {
+    return 'map';
+  }
+
+  if (value instanceof WeakSet) {
+    return 'weakset';
+  }
+
+  if (value instanceof WeakMap) {
+    return 'weakmap';
+  }
+
+  return null;
+}
+
+/**
+ * Returns a reference type
+ * @param {function | object} value Data of reference type
+ * @returns "object" | "function" | "array" | "regexp"
+ */
+function typeOfReference(value) {
+  const keyedCollectionType = typeofKeyedCollection(value);
+
+  if (keyedCollectionType) {
+    return keyedCollectionType;
+  }
+
+  if (value instanceof RegExp) {
+    return 'regexp';
+  }
+
+  if (isNull(value)) {
+    return null;
+  }
+
+  if (Array.isArray(value)) {
+    return 'array';
+  }
+
+  return typeof value;
+}
