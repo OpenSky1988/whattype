@@ -105,3 +105,23 @@ function typeOfReference(value) {
 
   return typeof value;
 }
+
+/**
+ * Returns a type
+ * @param {any} value Data of any type
+ * @returns "object" | "function" | "array" | "regexp" | "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "null"
+ */
+function typeOf(value) {
+  if (isPrimitiveType(value)) {
+    return typeOfPrimitive(value);
+  }
+
+  return typeOfReference(value);
+}
+
+module.exports ={
+  isNull,
+  isPrimitiveType,
+  isReferenceType,
+  typeOf,
+};
