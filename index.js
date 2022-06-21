@@ -49,3 +49,32 @@ function isPrimitiveType(value) {
  function isReferenceType(value) {
   return !isPrimitiveType(value);
 }
+
+/**
+ * Returns a keyed collection type. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections
+ * @param {object} value Data of object type
+ * @returns "set" | "map" | "weakset" | "weakmap"
+ */
+function typeofKeyedCollection(value) {
+  if (isNull(value)) {
+    return null;
+  }
+
+  if (value instanceof Set) {
+    return 'set';
+  }
+
+  if (value instanceof Map) {
+    return 'map';
+  }
+
+  if (value instanceof WeakSet) {
+    return 'weakset';
+  }
+
+  if (value instanceof WeakMap) {
+    return 'weakmap';
+  }
+
+  return null;
+}
