@@ -23,3 +23,20 @@ function isPrimitiveType(value) {
     return true;
   }
 }
+
+/**
+ * Returns a primitive type
+ * @param {any} value Data of primitive type
+ * @returns "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "null"
+ */
+ function typeOfPrimitive(value) {
+  if (typeof value === 'object' || typeof value === 'function') {
+    if (isNull(value)) {
+      return 'null';
+    }
+
+    return null;
+  }
+
+  return typeof value;
+}
