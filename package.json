@@ -1,16 +1,20 @@
 {
   "name": "whattype",
   "version": "1.0.0",
+  "author": "Alexander Prisyazhnyy",
   "description": "Zero-dependency easy-to-use JavaScript data type helper",
-  "main": "index.js",
   "scripts": {
     "publish": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "index.js",
   "keywords": [
     "javascript",
     "type",
     "utility"
   ],
-  "author": "Alexander Prisyazhnyy",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/OpenSky1988/whattype.git"
+  },
+  "license": "MIT"
 }
